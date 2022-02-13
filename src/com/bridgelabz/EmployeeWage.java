@@ -6,6 +6,7 @@ public class EmployeeWage {
 	public static final int WAGE_PER_HR = 20;
 	public static final int PART_TIME = 1;
 	public static final int WORKING_DAYS = 20;
+	public static final int MAX_WORKING_HRS = 100;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Problem using Oops concepts");
@@ -13,39 +14,35 @@ public class EmployeeWage {
 	}
 
 	/*
-	 * This method is used to Calculate Wages for a Month. used Switch Case
-	 * Statement
+	 * This method is used to Calculate Wages till a condition of total working
+	 * hours or days is reached for a month
 	 */
 	public static void computeEmpWage() {
 		// variables
-		int FullDayHours = 0;
-		int dailyWage = 0;
-		int totalWage = 0;
+		int empHrs = 0;
+		int totalEmpHrs = 0;
+		int totalWorkingDays = 0;
 
-		for (int day = 1; day <= WORKING_DAYS; day++) {
-			System.out.println("FOR DAY " + day);
+		while (totalEmpHrs <= MAX_WORKING_HRS && totalWorkingDays < WORKING_DAYS) {
+			totalWorkingDays++;
 			// Used ((RANDOM)) for Attendance Check
-			int empCheck = (int) (Math.random() * 100) % 3;
+			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 			// computation
 			switch (empCheck) {
-			case FULL_TIME:
-				FullDayHours = 16;
-				dailyWage = FullDayHours * WAGE_PER_HR;
-				System.out.println("Employee is present for full time \n And Salary is " + dailyWage);
-				break;
 			case PART_TIME:
-				FullDayHours = 8;
-				dailyWage = FullDayHours * WAGE_PER_HR;
-				System.out.println("Employee is present for part time \n And Salary is " + dailyWage);
+				empHrs = 4;
+				break;
+			case FULL_TIME:
+				empHrs = 8;
 				break;
 			default:
-				FullDayHours = 0;
-				dailyWage = FullDayHours * WAGE_PER_HR;
-				System.out.println("Employee is absent \n And Salary is " + dailyWage);
-				break;
+				empHrs = 0;
 			}
-			totalWage += dailyWage;
+
+			totalEmpHrs += empHrs;
+			System.out.println("For Day" + totalWorkingDays + " : Employee Maximum Working Hours are " + empHrs);
 		}
-		System.out.println("Total wage for a month is " + totalWage);
+		int totalEmpWage = totalEmpHrs * WAGE_PER_HR;
+		System.out.println("Total Employee Wage for month is " + totalEmpWage);
 	}
 }
