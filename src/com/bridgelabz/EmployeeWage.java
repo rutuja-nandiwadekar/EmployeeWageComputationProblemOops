@@ -17,7 +17,6 @@ public class EmployeeWage {
 		// variables
 		int FullDayHours = 0;
 		int wage = 0;
-
 		// Used ((RANDOM)) for Attendance Check
 		int empCheck = (int) (Math.random() * 100) % 2;
 		if (empCheck == FULL_TIME) {
