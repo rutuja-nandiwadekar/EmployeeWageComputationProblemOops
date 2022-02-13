@@ -12,7 +12,8 @@ public class EmployeeWage {
 	}
 
 	/*
-	 * This method is used to Calculate Daily Employee Wage.
+	 * This method is used to Calculate Daily Employee Wage. using Switch Case
+	 * Statement
 	 */
 	public static void computeEmpWage() {
 		// variables
@@ -20,13 +21,16 @@ public class EmployeeWage {
 		int wage = 0;
 		// Used ((RANDOM)) for Attendance Check
 		int empCheck = (int) (Math.random() * 100) % 3;
-		if (empCheck == FULL_TIME) {
+		switch (empCheck) {
+		case FULL_TIME:
 			System.out.println("Employee is Present Full time");
 			FullDayHours = 16;
-		} else if (empCheck == PART_TIME) {
+			break;
+		case PART_TIME:
 			System.out.println("Employee is Present Part time");
 			FullDayHours = 8;
-		} else {
+			break;
+		default:
 			System.out.println("Employee is Absent");
 		}
 		// computation
