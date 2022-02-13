@@ -4,6 +4,7 @@ public class EmployeeWage {
 	// initialization
 	public static final int FULL_TIME = 1;
 	public static final int WAGE_PER_HR = 20;
+	public static final int PART_TIME = 1;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Problem using Oops concepts");
@@ -18,9 +19,12 @@ public class EmployeeWage {
 		int FullDayHours = 0;
 		int wage = 0;
 		// Used ((RANDOM)) for Attendance Check
-		int empCheck = (int) (Math.random() * 100) % 2;
+		int empCheck = (int) (Math.random() * 100) % 3;
 		if (empCheck == FULL_TIME) {
-			System.out.println("Employee is Present");
+			System.out.println("Employee is Present Full time");
+			FullDayHours = 16;
+		} else if (empCheck == PART_TIME) {
+			System.out.println("Employee is Present Part time");
 			FullDayHours = 8;
 		} else {
 			System.out.println("Employee is Absent");
