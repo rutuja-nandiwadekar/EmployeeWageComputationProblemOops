@@ -25,6 +25,7 @@ public class EmployeeWage {
 
 		while (totalEmpHrs <= MAX_WORKING_HRS && totalWorkingDays < WORKING_DAYS) {
 			totalWorkingDays++;
+
 			// Used ((RANDOM)) for Attendance Check
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 			// computation
