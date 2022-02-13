@@ -1,5 +1,9 @@
 package com.bridgelabz;
 
+/*This is refactor Code 
+ * to write a Class Method 
+ * to Compute Employee Wage 
+*/
 public class EmployeeWage {
 	// initialization
 	public static final int FULL_TIME = 2;
@@ -22,13 +26,11 @@ public class EmployeeWage {
 		int empHrs = 0;
 		int totalEmpHrs = 0;
 		int totalWorkingDays = 0;
-
+		// computation
 		while (totalEmpHrs <= MAX_WORKING_HRS && totalWorkingDays < WORKING_DAYS) {
 			totalWorkingDays++;
-
 			// Used ((RANDOM)) for Attendance Check
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-			// computation
 			switch (empCheck) {
 			case PART_TIME:
 				empHrs = 4;
